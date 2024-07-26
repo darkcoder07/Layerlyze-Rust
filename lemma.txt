@@ -1,0 +1,20 @@
+Conventions:
+-A base key refers to the first key you have to press out of two to output a bigram
+-A secondary key refers to the second
+
+-Odd letter words are resolved by having spacegrams like 'a_' assigned to a certain base key,
+being output by pressing that certain base key and then pressing space
+
+-A pre-existing keyboard layout can probably be used for the spacegrams, though we can look into
+optimizing one (we don't need an oa stack...), it's probably not necessary or impactful
+    -We can let people choose what to use
+        -We might be screwed here actually because it's not like e_ can be on the same finger as th
+
+-Numbers and special characters, as well as punctuation beyond , . ; ' aren't handled.
+    -Instead you use the same paradigm as spaces. Pressing a certain base key and then the character
+    will output some letter and then the number/special character. Pressing the number/character by
+    itself will merely output it.
+
+-Shift is weird. The idea is for a firmware implementation to shift the character that's being pressed
+while the shift key is being held, subverting the otherwise bigram-centered paradigm. I.e:
+    -If keys x and y output to "th", shifting while x is being pressed outputs "Th".
