@@ -4,6 +4,8 @@ use crate::bilayout::Layout;
 use crate::score::score;
 use rand::prelude::*;
 
+/// Legacy optimizer code
+
 pub fn optimize(mut layout: Layout, processed_word_corpus: HashMap<String, u32, FxBuildHasher>, max_attempts: u32) -> Layout {
 
     let mut attempts: u32 = 0;

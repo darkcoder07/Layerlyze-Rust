@@ -2,6 +2,10 @@ use std::collections::HashMap;
 use rustc_hash::{FxBuildHasher, FxHashMap};
 use crate::bilayout::Layout;
 
+/// Separates a corpus into ~900 slices corresponding to each bigram in a layout. Each slice contains
+/// the set of words that encounter that bigram while normally typing with the layout. (I.e, if "the"
+/// is a word, "th" will include "the", but not "he", since normally "the" is typed with "th" + "e_").
+
 pub fn slice_and_dice(initial_layout: &Layout, word_map: &HashMap<String, u32, FxBuildHasher>) -> HashMap<String, HashMap<String, u32, FxBuildHasher>, FxBuildHasher> {
 
     let mut corpus_by_bigrams = FxHashMap::default();

@@ -6,6 +6,10 @@ use std::fmt::Formatter;
 use serde::{Deserialize, Serialize};
 use crate::finger::Finger;
 
+/// Stores bigram layouts with arrays for a fingermap, bigrams, and base layer, with hashmaps
+/// to quickly locate the indexes of bigrams or bases without having to iterate through arrays.
+/// Some of this code is really scuffed, and I had to use unsafe rust for...reasons.
+
 const EMPTY: &str = "__";
 const LAYER_SIZE: usize = 30;  // we are assuming that the number of layers is equal to the layer size
 const DEFAULT_BASE: [&str; 30] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",

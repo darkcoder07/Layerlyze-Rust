@@ -3,6 +3,13 @@ use std::fmt::Formatter;
 use serde::{Deserialize, Serialize};
 use crate::bilayout::Layout;
 
+/// Individual finger units that keep track of keypresses in their key column. I'm very unsure if
+/// this is the best way to perform simulated typing analysis, but it works for now. Fingerspeed is
+/// calculated by dividing the distance between keypresses by 2^(time between keypresses), so a
+/// 2u s2fs, for example, would be 2/2^2 = 0.5. Aggregrate fingerspeed defines layout score. I may
+/// change this scheme in the future to weight sfs differently. I'll probably need to collate fingers
+/// into "hands" to keep track of trigram stats and scissors.
+
 const LIST_TO_COORDINATES: [(i64, i64); 30] = [(0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0),
                        (8, 0), (9, 0), (0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1),
                        (6, 1), (7, 1), (8, 1), (9, 1), (0, 2), (1, 2), (2, 2), (3, 2),
@@ -43,11 +50,11 @@ pub struct Finger {
 
              if delta_time < 20 { // turn this to 2 if you want only sfb analysis
                  if dist > 0.0 {
-                     let speed_gain: f64 = dist / (10_u64.pow((delta_time - 1) as u32) as f64);
+                     let speed_gain: f64 = dist / (2_u64.pow((delta_time - 1) as u32) as f64);
                      //if delta_time < 2 {println!("SFB Speed: {} Finger: {}  Word: {}", speed_gain, self.name, word);}
                      self.speed += speed_gain * freq as f64
                  } else {
-                     let speed_gain: f64 = SFR_DIST / (10_u64.pow((delta_time - 1) as u32) as f64);
+                     let speed_gain: f64 = SFR_DIST / (2_u64.pow((delta_time - 1) as u32) as f64);
                      //if delta_time < 2 {println!("SFR Speed: {} Finger: {} Word: {}", speed_gain, self.name, word);}
                      self.speed += speed_gain * freq as f64
                  }

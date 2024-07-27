@@ -5,6 +5,14 @@ use crate::score::score;
 use rand::prelude::*;
 use crate::dicing;
 
+
+/// Optimizes using slices of the corpus with each iteration, instead of the full corpus,
+/// providing a major speed gain. Each random iteration, two bigrams are randomly selected
+/// to be swapped. All words featuring either of the two bigrams are combined as the corpus slice,
+/// and the layout is scored twice, once before the swap and once after. If the after-swap score
+/// is lower, the delta between the two scores is subtracted from the overall layout score and
+/// the swap is kept.
+
 pub fn chef_optimize(mut layout: Layout, processed_word_corpus: HashMap<String, u32, FxBuildHasher>, max_attempts: u32) -> Layout {
 
     let mut attempts: u32 = 0;

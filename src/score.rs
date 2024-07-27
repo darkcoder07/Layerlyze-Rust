@@ -3,6 +3,9 @@ use rustc_hash::FxBuildHasher;
 use crate::bilayout::Layout;
 
 
+/// Runs through the given corpus and performs simulated typing on each word by sending presses to the
+/// respective fingers used while typing each bigram of the current word.
+
 //we should optimize this whole thing by assuming ASCII and changing to vectors of bytes. I swear
 //might be an issue that we need to mutably borrow the layout to score it, I'm not sure
 pub(crate) fn score(layout: &mut Layout, processed_word_map: &HashMap<String, u32, FxBuildHasher>) -> f64 {

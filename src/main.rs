@@ -26,8 +26,8 @@ use crate::score::score;
 fn main() {
 
     //processcorpus::update_corpus_files("files/monkeyracer.txt");
-    //load_and_print();
-    typical_stuff();
+    load_and_print();
+    //typical_stuff();
     //load_and_score();
 }
 
