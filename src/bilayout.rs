@@ -12,15 +12,16 @@ use crate::finger::Finger;
 
 const EMPTY: &str = "__";
 const LAYER_SIZE: usize = 30;  // we are assuming that the number of layers is equal to the layer size
-const DEFAULT_BASE: [&str; 30] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
-    "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "'", ",", ".", ";"];
+const DEFAULT_BASE: [&str; 30] = ["b", "h", "y", "u", "g", "x", "f", "o", "l", "j",
+                                  "a", "s", "t", "e", "i", ".", "n", "d", "r", ",",
+                                  "k", "v", "m", "p", "q", "z", "c", "'", "w", ";"];
 // we don't make a default bigram list because that would take too much work tbh
 
 const DEFAULT_FINGER_LIST: [&str; 30] = ["lp", "lr", "lm", "li", "li", "ri", "ri", "rm", "rr", "rp",
                                          "lp", "lr", "lm", "li", "li", "ri", "ri", "rm", "rr", "rp",
                                          "lp", "lr", "lm", "li", "li", "ri", "ri", "rm", "rr", "rp"];
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub(crate) struct Layout {
     layer_list: [[String; 30]; 30],
     base_layer: [String; 30],
@@ -38,7 +39,6 @@ pub(crate) struct Layout {
     t: Finger
 }
 
-//to be done: hashmap, fingers
 impl Layout {
     pub fn new() -> Layout {
         Layout {
@@ -246,6 +246,23 @@ impl Layout {
         (l1, l2, i1, i2, bi1, bi2)
     }
 
+    pub fn get_rand_bigram(&self) -> (usize, usize, String) {
+        let l1 = Self::rand_index();
+        let i1 = Self::rand_index();
+
+        let bi1 = self.layer_list[l1][i1].clone();
+
+        (l1, i1, bi1)
+    }
+
+    pub fn set_layer_index(&mut self, l: usize, i: usize, bi: String) {
+
+         self.layer_list[l][i] = bi.clone();
+         self.bigram_map.remove(&bi);
+         self.bigram_map.insert(bi, (l, i));
+
+    }
+
     pub fn get_rand_intralayer(&self) -> (usize, usize, usize, String, String) {
 
         let layer_index = Self::rand_index();
@@ -265,6 +282,22 @@ impl Layout {
 
         (i1, i2, b1, b2)
     }
+
+    pub fn get_one_rand_base(&self) -> (usize, String) {
+        let i1 = Self::rand_index();
+        let b1 = self.base_layer[i1].clone();
+
+        (i1, b1)
+    }
+
+    pub fn set_base_index(&mut self, index: usize, base: String) {
+
+         self.base_layer[index] = base.clone();
+         self.base_map.remove(&base);
+         self.base_map.insert(base, index);
+
+    }
+
     pub fn get_base_layer(&self) -> &[String; 30] { &self.base_layer }
 
     pub fn get_layer_list(&self) -> &[[String; 30]; 30] { &self.layer_list }
@@ -278,35 +311,35 @@ impl fmt::Display for Layout {
 
 fn build_base_map() -> FxHashMap<String, usize> {
     let mut map = FxHashMap::default();
-    map.insert(String::from("a"), 0);
-    map.insert(String::from("b"), 1);
-    map.insert(String::from("c"), 2);
-    map.insert(String::from("d"), 3);
-    map.insert(String::from("e"), 4);
-    map.insert(String::from("f"), 5);
-    map.insert(String::from("g"), 6);
-    map.insert(String::from("h"), 7);
-    map.insert(String::from("i"), 8);
+    map.insert(String::from("b"), 0);
+    map.insert(String::from("h"), 1);
+    map.insert(String::from("y"), 2);
+    map.insert(String::from("u"), 3);
+    map.insert(String::from("g"), 4);
+    map.insert(String::from("x"), 5);
+    map.insert(String::from("f"), 6);
+    map.insert(String::from("o"), 7);
+    map.insert(String::from("l"), 8);
     map.insert(String::from("j"), 9);
-    map.insert(String::from("k"), 10);
-    map.insert(String::from("l"), 11);
-    map.insert(String::from("m"), 12);
-    map.insert(String::from("n"), 13);
-    map.insert(String::from("o"), 14);
-    map.insert(String::from("p"), 15);
-    map.insert(String::from("q"), 16);
-    map.insert(String::from("r"), 17);
-    map.insert(String::from("s"), 18);
-    map.insert(String::from("t"), 19);
-    map.insert(String::from("u"), 20);
+    map.insert(String::from("a"), 10);
+    map.insert(String::from("s"), 11);
+    map.insert(String::from("t"), 12);
+    map.insert(String::from("e"), 13);
+    map.insert(String::from("i"), 14);
+    map.insert(String::from("."), 15);
+    map.insert(String::from("n"), 16);
+    map.insert(String::from("d"), 17);
+    map.insert(String::from("r"), 18);
+    map.insert(String::from(","), 19);
+    map.insert(String::from("k"), 20);
     map.insert(String::from("v"), 21);
-    map.insert(String::from("w"), 22);
-    map.insert(String::from("x"), 23);
-    map.insert(String::from("y"), 24);
+    map.insert(String::from("m"), 22);
+    map.insert(String::from("p"), 23);
+    map.insert(String::from("q"), 24);
     map.insert(String::from("z"), 25);
-    map.insert(String::from("'"), 26);
-    map.insert(String::from(","), 27);
-    map.insert(String::from("."), 28);
+    map.insert(String::from("c"), 26);
+    map.insert(String::from("w"), 27);
+    map.insert(String::from("'"), 28);
     map.insert(String::from(";"), 29);
     map
 }

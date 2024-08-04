@@ -17,7 +17,7 @@ const LIST_TO_COORDINATES: [(i64, i64); 30] = [(0, 0), (1, 0), (2, 0), (3, 0), (
  const SFR_DIST: f64 = 0.6;
  const TRAVEL_DIST: f64 = 0.0002;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Finger {
     name: String,
     history: [[usize; 2]; 24],
@@ -50,15 +50,15 @@ pub struct Finger {
 
              if delta_time < 20 { // turn this to 2 if you want only sfb analysis
                  if dist > 0.0 {
-                     let speed_gain: f64 = dist / (2_u64.pow((delta_time - 1) as u32) as f64);
+                     let speed_gain: f64 = dist / (10_u64.pow((delta_time - 1) as u32) as f64);
                      //if delta_time < 2 {println!("SFB Speed: {} Finger: {}  Word: {}", speed_gain, self.name, word);}
                      self.speed += speed_gain * freq as f64
                  } else {
-                     let speed_gain: f64 = SFR_DIST / (2_u64.pow((delta_time - 1) as u32) as f64);
+                     let speed_gain: f64 = SFR_DIST / (10_u64.pow((delta_time - 1) as u32) as f64);
                      //if delta_time < 2 {println!("SFR Speed: {} Finger: {} Word: {}", speed_gain, self.name, word);}
                      self.speed += speed_gain * freq as f64
                  }
-             }
+            }
          }
          else {
              if LIST_TO_COORDINATES[index].1 != 1 {

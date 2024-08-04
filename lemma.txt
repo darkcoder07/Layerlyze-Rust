@@ -18,3 +18,8 @@ optimizing one (we don't need an oa stack...), it's probably not necessary or im
 -Shift is weird. The idea is for a firmware implementation to shift the character that's being pressed
 while the shift key is being held, subverting the otherwise bigram-centered paradigm. I.e:
     -If keys x and y output to "th", shifting while x is being pressed outputs "Th".
+
+PB Scores:
+
+    -10x sfs - 4900 processed, 1300 culled
+    -2x sfs - 39000 processed, 13k culled

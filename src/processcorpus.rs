@@ -7,6 +7,9 @@ use regex::Regex;
 use bincode::{config, Decode, Encode};
 use crate::processcorpus;
 
+/// Processes given corpora into a list of bigrams to generate layouts with, and lists of processed
+/// corpora in the form of words to iterate over with simulated typing.
+
 fn lines_from_corpus(file_path: &str) -> IntoIter<String> {
     let f = File::open(file_path).expect("Exception: Unable to open file.");
     let f = BufReader::new(f);

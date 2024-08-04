@@ -2792,7 +2792,7 @@ The shearers' hut had bark walls and a tin roof. The floors were dirt and there 
 
 Cosby Show and Roseanne, think I've taken 'bout as much as I can. Judge Wapner, oh my. You gotta be Rain Man to like this guy. Thirtysomething is alright if you like hearing yuppies whining all night. Can't stand Twin Peaks. Wish they'd lynch those donut-eating freaks. Those Siskel & Ebert bums ought to go home and sit on their thumbs.
 
-The observed brightness of a Lambertian surface may be written as the product of an albedo factor, p, and the cosine of the incident angle, cos i. This means that brightness can be written as a product of a term that depends on the material, p, and a term that depends on surface direction, which in turn depends on f and g.
+The observed brightness of a Lambertian surface may be written as the product of an albedo factor, p, and the cosine of the incident angle, cos _i. This means that brightness can be written as a product of a term that depends on the material, p, and a term that depends on surface direction, which in turn depends on f and g.
 
 The poet, the artist, the sleuth - whoever sharpens our perception tends to be antisocial; rarely "well-adjusted," he cannot go along with currents and trends. A strange bond often exists between antisocial types in their power to see environments as they really are. This need to interface, to confront environments with a certain antisocial power is manifest in the famous story "The Emperor's New Clothes".
 
@@ -7096,7 +7096,7 @@ The blade is as good as though it had just come out of the grindstone.
 
 May your hands always be busy, may your feet always be swift. May you have a strong foundation when the winds of changes shift. May your heart always be joyful, may your song always be sung, and may you stay forever young.
 
-Money is like other goods: the higher the opportunity cost, the less of it we want to hold. Consider, first, how the transactions' demand for money (i.e., the money held to facilitate purchases of goods and services) is affected by higher interest rates. When the opportunity cost of money is high, we lose interest by holding more of it, so we find ways to hold less. For example, if interest rates are high enough, we might reduce the funds in our pockets and in our bank accounts and take funds out of interest-bearing mutual funds in smaller amounts more frequently.
+Money is like other goods: the higher the opportunity cost, the less of it we want to hold. Consider, first, how the transactions' demand for money (_i.e., the money held to facilitate purchases of goods and services) is affected by higher interest rates. When the opportunity cost of money is high, we lose interest by holding more of it, so we find ways to hold less. For example, if interest rates are high enough, we might reduce the funds in our pockets and in our bank accounts and take funds out of interest-bearing mutual funds in smaller amounts more frequently.
 
 In the beginning God created the heavens and the earth. The earth was without form, and void; and darkness was on the face of the deep. And the Spirit of God was hovering over the face of the waters.
 
@@ -7134,7 +7134,7 @@ I'm worse at what I do best. And for this gift I feel blessed. Our little group 
 
 And I knew that in spite of all the roses and kisses and restaurant dinners a man showered on a woman before he married her, what he secretly wanted when the wedding service ended was for her to flatten out underneath his feet like Mrs. Willard's kitchen mat.
 
-Friday morning Qwilleran sat at his typewriter and stared at the row of keys that spelled q-w-e-r-t-y-u-i-o-p. He hated that word, qwertyuiop; it meant that he was stymied, that he should be writing brilliant copy, and that he hadn't an idea in his head.
+Friday morning Qwilleran sat at his typewriter and stared at the row of keys that spelled q-w-e-r-t-y-u-_i-o-p. He hated that word, qwertyuiop; it meant that he was stymied, that he should be writing brilliant copy, and that he hadn't an idea in his head.
 
 Not long after World War II, the stormy public debate over rural poverty and the human impact of agricultural change tapered off in each nation. As conservatives silenced dissenting voices by means of force or compromise, it would be concerns of productivity - not inequality - that dominated the next generation of rural policy making.
 
@@ -7716,7 +7716,7 @@ Enjoy this next test. I'm going to go to the surface. It's a beautiful day out. 
 
 She, who always seems so happy in a crowd, whose eyes can be so private and so proud. No one's allowed to see them when they cry. She may be the love that cannot hope to last. May come to me from shadows of the past that I'll remember till the day I die.
 
-I'm taking over my body. Back in control, no more shotty. I bet a lot of me was lost, t's uncrossed and i's undotted. I fought it a lot. And it seems a lot like flesh is all I got. Not anymore, flesh out the door. Swat. I must've forgot, you can't trust me. I'm open a moment and close when you show it. Before you know it, I'm lost at sea. And now that I write and think about it. And the story unfolds.
+I'm taking over my body. Back in control, no more shotty. I bet a lot of me was lost, t's uncrossed and _i's undotted. I fought it a lot. And it seems a lot like flesh is all I got. Not anymore, flesh out the door. Swat. I must've forgot, you can't trust me. I'm open a moment and close when you show it. Before you know it, I'm lost at sea. And now that I write and think about it. And the story unfolds.
 
 A strange game. The only winning move is not to play. How about a nice game of chess?
 
@@ -11906,7 +11906,7 @@ The basis of the Aztecs' success in creating a great state and ultimately an emp
 
 I put a lot of thought into the Universe; came up with the rules. It sets a bad example if I break them - not to mention, shows favoritism. Why should one person get a miracle, and not everybody else? Can you imagine the confusion? It's better when we all abide by the rules.
 
-Make no mistake about people who leap from burning windows. Their terror of falling from a great height is still just as great as it would be for you or me standing speculatively at the same window just checking out the view; i.e. the fear of falling remains a constant. The variable here is the other terror, the fire's flames: when the flames get close enough, falling to death becomes the slightly less terrible of two terrors. It's not desiring the fall; it's terror of the flames.
+Make no mistake about people who leap from burning windows. Their terror of falling from a great height is still just as great as it would be for you or me standing speculatively at the same window just checking out the view; _i.e. the fear of falling remains a constant. The variable here is the other terror, the fire's flames: when the flames get close enough, falling to death becomes the slightly less terrible of two terrors. It's not desiring the fall; it's terror of the flames.
 
 God help the man who ever really loves you. You'd break his heart, my darling, cruel, destructive little cat who is so careless and confident she doesn't even trouble to sheathe her claws.
 
@@ -12282,7 +12282,7 @@ Tell all who will hear, the Reaper sails to Mars. And he calls for an Iron Rain.
 
 And the mind that has conceived a plan of living must never lose sight of the chaos against which that pattern was conceived. That goes for societies as well as for individuals.
 
-Friday morning Qwilleran sat at his typewriter and stared at the row of keys that spelled q-w-e-r-t-y-u-i-o-p.
+Friday morning Qwilleran sat at his typewriter and stared at the row of keys that spelled q-w-e-r-t-y-u-_i-o-p.
 
 I took a course in art last winter. I learnt the difference between a fine oil painting, and a mechanical thing, like a photograph. The photograph shows only the reality. The painting shows not only the reality, but the dream behind it. It's our dreams, doctor, that carry us on. They separate us from the beasts.
 
@@ -15452,7 +15452,7 @@ It is a beautiful day outside. Birds are singing, flowers are blooming... On day
 
 Look at the stars. Same stars as last week, last year, when we were kids, before we were even born. In a hundred years no one will ever know who we were. They'll know those same stars.
 
-Geometry sets out from certain conceptions such as "plane," "point," and "straight line," with which we are able to associate more or less definite ideas, and from certain simple propositions (axioms) which, in virtue of these ideas, we are inclined to accept as "true." Then, on the basis of a logical process, the justification of which we feel ourselves compelled to admit, all remaining propositions are shown to follow from those axioms, i.e. they are proven.
+Geometry sets out from certain conceptions such as "plane," "point," and "straight line," with which we are able to associate more or less definite ideas, and from certain simple propositions (axioms) which, in virtue of these ideas, we are inclined to accept as "true." Then, on the basis of a logical process, the justification of which we feel ourselves compelled to admit, all remaining propositions are shown to follow from those axioms, _i.e. they are proven.
 
 It is the stated position of the U.S. Air Force that their safeguards would prevent the occurrence of such events as are depicted in this film. Furthermore, it should be noted that none of the characters portrayed in this film are meant to represent any real persons living or dead.
 
