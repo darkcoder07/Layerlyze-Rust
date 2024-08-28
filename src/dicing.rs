@@ -9,7 +9,7 @@ use crate::bilayout::Layout;
 pub fn slice_and_dice(initial_layout: &Layout, word_map: &HashMap<String, u32, FxBuildHasher>) -> HashMap<String, HashMap<String, u32, FxBuildHasher>, FxBuildHasher> {
 
     let mut corpus_by_bigrams = FxHashMap::default();
-    for (bigram, _) in initial_layout.get_bigram_map() {
+    for bigram in initial_layout.get_bigram_map().keys() {
         let mut slice = FxHashMap::default();
         for (word, freq) in word_map {
             let mut t = 0;
@@ -25,7 +25,7 @@ pub fn slice_and_dice(initial_layout: &Layout, word_map: &HashMap<String, u32, F
                 }
                 else {
                     if chunk == bigram {
-                        slice.insert(word.clone(), freq.clone());
+                        slice.insert(word.clone(), *freq);
                     }
                      t += 2;
                 }
@@ -38,7 +38,7 @@ pub fn slice_and_dice(initial_layout: &Layout, word_map: &HashMap<String, u32, F
 
 pub fn base_slice_and_dice(initial_layout: &Layout,  word_map: &HashMap<String, u32, FxBuildHasher>) -> HashMap<String, HashMap<String, u32, FxBuildHasher>, FxBuildHasher> {
     let mut corpus_by_bases = FxHashMap::default();
-    for (base, _) in initial_layout.get_base_map() {
+    for base in initial_layout.get_base_map().keys() {
         let mut slice = FxHashMap::default();
         for (word, freq) in word_map {
             let mut t = 0;
@@ -52,7 +52,7 @@ pub fn base_slice_and_dice(initial_layout: &Layout,  word_map: &HashMap<String, 
                 else if vec[1] == ' ' {
 
                     if &chunk[..1] == base {
-                        slice.insert(word.clone(), freq.clone());
+                        slice.insert(word.clone(), *freq);
                     }
 
                     t += 2;

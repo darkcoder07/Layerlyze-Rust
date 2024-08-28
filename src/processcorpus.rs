@@ -79,7 +79,7 @@ fn cull_words(mut map: HashMap<String, u32, FxBuildHasher>, mut bound: u32) -> H
 fn map_to_file(file_path: &str, map: HashMap<String, u32, FxBuildHasher>) {
     let serialized = serde_json::to_string(&map).unwrap();
     let mut file = OpenOptions::new().write(true).open(file_path).unwrap();
-    file.write(serialized.as_ref()).expect("Exception: Couldn't write to file.");
+    file.write_all(serialized.as_ref()).expect("Exception: Couldn't write to file.");
 
 }
 

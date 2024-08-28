@@ -36,7 +36,7 @@ pub fn anneal_optimize(mut layout: Layout, processed_word_corpus: HashMap<String
 
     while iteration < max_attempts {
 
-       if best_score < 4500.0 { break }
+       if best_score < 1100.0 { break }
 
         let mut rng = thread_rng();
         let rand: f64 = rng.gen();
@@ -115,12 +115,9 @@ pub fn anneal_optimize(mut layout: Layout, processed_word_corpus: HashMap<String
             iteration += 1;
             //println!("Metropolis: {}", metropolis_criterion)
         }
-        else {
-                if 0.8 > rand && rand > 0.3 { layout.swap_interlayer_known_bigrams(interlayer.0, interlayer.1, interlayer.2, interlayer.3); }
-                else if rand < 0.3 { layout.swap_intralayer_known_bigrams(intralayer.0, intralayer.1, intralayer.2); }
-                else { layout.swap_known_bases(base.0, base.1);}
-                // println!("Couldn't find a better layout: {} attempts.", attempts);
-        }
+        else if 0.8 > rand && rand > 0.3 { layout.swap_interlayer_known_bigrams(interlayer.0, interlayer.1, interlayer.2, interlayer.3); }
+        else if rand < 0.3 { layout.swap_intralayer_known_bigrams(intralayer.0, intralayer.1, intralayer.2); }
+        else { layout.swap_known_bases(base.0, base.1);}
     }
 
     layout

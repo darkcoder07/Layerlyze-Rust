@@ -156,13 +156,12 @@ impl Layout {
     }
 
     pub fn populate_with_bigram(&mut self, bigram:String) {
-        let iter = 0;
-        while iter < 100000 {
+        for _i in 0..10000{
             let layer_index = Self::rand_index();
             let layer = &mut self.layer_list[layer_index];
             let bigram_index = Self::rand_index();
-            if layer[bigram_index] == EMPTY.to_owned() {
-                layer[bigram_index] = bigram.clone();
+            if layer[bigram_index] == *EMPTY {
+                layer[bigram_index].clone_from(&bigram);
                 self.bigram_map.insert(bigram.clone(), (layer_index, bigram_index));
                 return
             }
@@ -172,15 +171,15 @@ impl Layout {
 
     pub fn find_finger(&mut self, index: usize) -> &mut Finger {
         match self.finger_list[index].as_str() {
-            "rp" => return &mut self.rp,
-            "rr" => return &mut self.rr,
-            "rm" => return &mut self.rm,
-            "ri" => return &mut self.ri,
-            "li" => return &mut self.li,
-            "lm" => return &mut self.lm,
-            "lr" => return &mut self.lr,
-            "lp" => return &mut self.lp,
-            "t" => return &mut self.t,
+            "rp" => &mut self.rp,
+            "rr" => &mut self.rr,
+            "rm" => &mut self.rm,
+            "ri" => &mut self.ri,
+            "li" => &mut self.li,
+            "lm" => &mut self.lm,
+            "lr" => &mut self.lr,
+            "lp" => &mut self.lp,
+            "t" => &mut self.t,
             _ => panic!()
         }
     }
@@ -257,7 +256,7 @@ impl Layout {
 
     pub fn set_layer_index(&mut self, l: usize, i: usize, bi: String) {
 
-         self.layer_list[l][i] = bi.clone();
+         self.layer_list[l][i].clone_from(&bi);
          self.bigram_map.remove(&bi);
          self.bigram_map.insert(bi, (l, i));
 
@@ -292,7 +291,7 @@ impl Layout {
 
     pub fn set_base_index(&mut self, index: usize, base: String) {
 
-         self.base_layer[index] = base.clone();
+         self.base_layer[index].clone_from(&base);
          self.base_map.remove(&base);
          self.base_map.insert(base, index);
 
